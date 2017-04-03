@@ -52,7 +52,8 @@ export default class Drawer extends React.Component {
     panTolerance: 50,
     right: false,
     fadeOut: false,
-    offset: 0
+    offset: 0,
+    noOverlay: false
   };
 
   componentWillReceiveProps(nextProps) {
@@ -210,7 +211,7 @@ export default class Drawer extends React.Component {
                     ? children(interpolated.myProp)
                     : children}
 
-                  {!this.isClosed() &&
+                  {!this.isClosed() && !this.props.noOverlay &&
                     <Hammer
                       style={overlay}
                       className={overlayClassName}
