@@ -35,6 +35,7 @@ export default class App extends Component {
             width={this.state.width}
             fadeOut={true}
             open={openLeft}
+            noOverlay={true}
             onChange={open => this.setState({ openLeft: open })}
           >
             <div style={{ width: "100%" }}>
